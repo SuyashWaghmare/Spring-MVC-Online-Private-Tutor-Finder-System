@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Parent</title>
+    <!-- Add the Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your other head content here -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Register Parent</h1>
+        <form th:action="@{/parent-api/registerParents}" method="post" th:object="${parent}">
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="parentmobileno">Mobile Number</label>
+                <input class="form-control" type="text" th:field="*{parentmobileno}" id="parentmobileno" placeholder="Mobile Number">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{parentmobileno}')}" th:errors="*{parentmobileno}"></div>
+            </div>
+            <!-- Parent Name -->
+            <div class="form-group">
+                <label for="parentname">Parent Name</label>
+                <input class="form-control" type="text" th:field="*{parentname}" id="parentname" placeholder="Parent Name">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{parentname}')}" th:errors="*{parentname}"></div>
+            </div>
+            <!-- Address -->
+            <div class="form-group">
+                <label for="adddress">Address</label>
+                <input class="form-control" type="text" th:field="*{adddress}" id="adddress" placeholder="Address">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{adddress}')}" th:errors="*{adddress}"></div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="mailid">Email</label>
+                <input class="form-control" type="email" th:field="*{mailid}" id="mailid" placeholder="Email">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{mailid}')}" th:errors="*{mailid}"></div>
+            </div>
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" th:field="*{username}" id="username" placeholder="Username">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{username}')}" th:errors="*{username}"></div>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" th:field="*{password}" id="password" placeholder="Password">
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('*{password}')}" th:errors="*{password}"></div>
+            </div>
+            <!-- Submit Button -->
+            <button class="btn btn-primary" type="submit">Register Parent</button>
+        </form>
+    </div>
+    <!-- Your script imports and other content here -->
+</body>
+</html>

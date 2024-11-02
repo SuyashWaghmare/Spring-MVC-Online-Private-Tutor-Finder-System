@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Parent Login</title>
+<!-- Include any CSS or JavaScript resources -->
+</head>
+<body>
+	<h1>Parent Login</h1>
+
+	<form th:action="@{/parent-api/loginParent}" method="post">
+		<label for="username">Username:</label> <input type="text"
+			id="username" name="username" /> <label for="password">Password:</label>
+		<input type="password" id="password" name="password" />
+		<button type="submit">Login</button>
+	</form>
+
+	<p th:if="${errorMessage}" th:text="${errorMessage}"
+		style="color: red;"></p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Error</title>
+</head>
+<body>
+    <h1>Validation Error</h1>
+    <ul>
+        <li th:each="error : ${#fields.errors()}">
+            <span th:text="${error}"></span>
+        </li>
+    </ul>
+</body>
+</html>

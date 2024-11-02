@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Add these lines inside the <head> section of your HTML -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+
+<title>Booked Parents</title>
+</head>
+<body>
+	<h1>Booked Parents</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Parent Mobile Number</th>
+				<th>Parent Name</th>
+				<th>Address</th>
+				<th>MailId</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="parent : ${bookingParents}">
+				<td th:text="${parent.parentmobileno}"></td>
+				<td th:text="${parent.parentname}"></td>
+				<td th:text="${parent.adddress}"></td>
+				<td th:text="${parent.mailid}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
